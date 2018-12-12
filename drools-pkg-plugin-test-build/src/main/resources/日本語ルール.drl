@@ -1,0 +1,13 @@
+package test;
+
+import org.mk300.fact.MyFact;
+import org.mk300.util.MyUtil;
+
+global MyUtil myUtil;
+
+rule "日本語ルール"
+when
+    $f : MyFact(myUtil.transform(name) == "太郎-san")
+then
+    System.out.println("hello " + $f);
+end

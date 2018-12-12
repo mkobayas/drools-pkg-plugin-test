@@ -1,0 +1,13 @@
+package test;
+
+import org.mk300.fact.MyFact;
+import org.mk300.util.MyUtil;
+
+global MyUtil myUtil;
+
+rule "rule1"
+when
+    $f : MyFact(myUtil.transform(name) == "test-san")
+then
+    System.out.println("hello " + $f);
+end
